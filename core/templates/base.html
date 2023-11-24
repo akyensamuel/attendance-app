@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <style>
+        @font-face {
+            font-family: 'Poppins-Medium';
+            src: url("{% static 'fonts/Poppins/Poppins-Medium.ttf' %}");
+        }
+        @font-face {
+            font-family: 'Poppins-Bold';
+            src: url("{% static 'fonts/Poppins/Poppins-Bold.ttf' %}");
+        }
+
+        body{
+            font-family:'Poppins-Medium';
+        }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body class="tw-bg-proj-white">
+    {% block main_content %}{% endblock %}
+</body>
+</html>

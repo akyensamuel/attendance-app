@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock %}
+{% block styles %}
+<style>
+    /* all screen types*/
+    .form-row{
+        margin:0.5rem;
+    }
+
+     @media(min-width:768px){
+       .split{
+          display:grid; 
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap:1.5rem;
+       }
+     }
+
+   </style>
+{% endblock %}
+{% block main_content %}
+
+<main class="md:tw-p-4 tw-p-2">
+    <h1 class="tw-text-center tw-text-slate-600 tw-text-2xl tw-underline tw-underline-offset-8 mb-4 mt-2" style="font-family:'Poppins-Bold'; " >Department of Mathematics</h1>
+    <div class="mb-5">
+        <!-- <input type="text" class="form-control"> -->
+        <div class="split form-row">
+            <div>
+                <label for="" class="tw-my-2 tw-text-slate-700">Name</label>
+                <input type="text" value="Samuel Akyen" class="form-control tw-text-slate-500 tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" disabled>
+            </div>
+            <div>
+                <label for="" class="tw-my-2 tw-text-slate-700">Index Number</label>
+                <input type="number" value="7230321" class="form-control tw-border-s-[3px] tw-border-s-proj-yellow tw-text-slate-500 tw-bg-transparent tw-rounded-sm tw-border tw-border-slate-300" disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="" class="tw-my-2 tw-text-slate-700">Reason</label>
+            <textarea name="" id="" cols="30" rows="10" class="form-control tw-text-slate-500 tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" disabled>Mild case of corona virus</textarea>
+        </div>
+    </div>
+
+    <div class="">
+        <!-- <input type="text" class="form-control"> -->
+        <div class="split form-row">
+            <div>
+                <label for="" class="tw-my-2 tw-text-slate-700">Name</label>
+                <input type="text" value="Nelda Pacoman" class="form-control tw-text-slate-500 tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" disabled>
+            </div>
+            <div>
+                <label for="" class="tw-my-2 tw-text-slate-700">Index Number</label>
+                <input type="number" value="7555321" class="form-control tw-border-s-[3px] tw-border-s-proj-yellow tw-text-slate-500 tw-bg-transparent tw-rounded-sm tw-border tw-border-slate-300" disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="" class="tw-my-2 tw-text-slate-700">Reason</label>
+            <textarea name="" id="" cols="30" rows="10" class="form-control tw-text-slate-500 tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" disabled>Went to visit Samuel</textarea>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

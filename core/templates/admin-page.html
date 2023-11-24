@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}index{% endblock %}
+{% block styles %}
+   <style>
+    /* all screen types*/
+    .form-row{
+        margin:0.5rem;
+    }
+
+     @media(min-width:768px){
+       .split{
+          display:grid; 
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap:1.5rem;
+       }
+     }
+   </style>
+{% endblock %}
+{% block main_content %}
+    <main class="md:tw-p-4 tw-p-2">
+        <form action="">
+            <!-- <input type="text" class="form-control"> -->
+            <div class="split form-row">
+                <div>
+                    <label for="" class="tw-my-2 tw-text-slate-700">Name</label>
+                    <input type="text" class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2">
+                </div>
+                <div>
+                    <label for="" class="tw-my-2 tw-text-slate-700">Index Number</label>
+                    <input type="number" class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2">
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="" class="tw-my-2 tw-text-slate-700">Reason</label>
+                <textarea name="" id="" cols="30" rows="10" class="form-control tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2"></textarea>
+            </div>
+
+            <div class="form-row tw-mt-4 tw-flex tw-justify-center">
+             <button class="tw-border-0 tw-rounded tw-group tw-flex tw-bg-transparent tw-outline tw-outline-2 tw-outline-proj-blue tw-text-proj-blue p-2 hover:tw-bg-proj-navy hover:tw-text-white hover:tw-outline-0">
+                <span>Save</span>  
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" class="bi bi-check-lg tw-fill-proj-blue group-hover:tw-fill-white" viewBox="0 0 16 16">
+                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                    </svg>
+                </span>
+            </button>
+                <!-- <button class="tw-border-0 tw-rounded tw-bg-transparent tw-outline tw-outline-2 tw-outline-proj-blue tw-text-proj-blue p-1 hover:tw-bg-proj-blue hover:tw-text-white hover:tw-outline-0">Save and add another</button>
+                <button class="tw-border-0 tw-rounded  tw-bg-transparent tw-outline tw-outline-2 tw-outline-proj-blue tw-text-proj-blue p-1 hover:tw-bg-proj-blue hover:tw-text-white hover:tw-outline-0">Cancel</button> -->
+            </div>
+        </form>
+    </main>
+{% endblock %}
