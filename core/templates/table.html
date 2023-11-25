@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}Table{% endblock %}
+{% block styles %}
+    <style>
+        table td{
+            --tw-text-opacity: 1 !important;
+            color: rgb(100 116 139 / var(--tw-text-opacity)) !important;
+         }
+        
+         /*
+         tbody tr:hover > *{
+            --tw-bg-opacity: 1 !important;
+            background-color: rgb(231 239 255 / var(--tw-bg-opacity)) !important;
+         }
+         */
+
+         td, th{
+            background:transparent !important;
+         }
+    </style>
+    
+{% endblock %}
+{% block main_content %}
+
+<main class="m-4 mt-5">
+
+    <!-- <h1 class="tw-text-proj-yellow">Hello world</h1> -->
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="tw-border-s-2">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Residential Address</th>
+          </tr>
+        </thead>
+  <tbody class="table-group-divider tw-border-t-slate-400">
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">1</th>
+      <td>Samuel Akyen</td>
+      <td>Mathematics</td>
+      <td>123 Accra, Street</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">2</th>
+      <td>Klenam Agbengu</td>
+      <td>Computer Science</td>
+      <td>123 Kumasi Lane</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">3</th>
+      <td>Ernest Mensah-Otabil</td>
+      <td>Nursing</td>
+      <td>455, Main Street</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">4</th>
+      <td>James Lazingi</td>
+      <td>Petrochemical Engineering</td>
+      <td>453, Wanga Estate</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">5</th>
+      <td>Josephine Formena</td>
+      <td>Acturial Science</td>
+      <td>Fred mark avenue</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">6</th>
+      <td>George Cudjoe</td>
+      <td>Electrical Engineering</td>
+      <td>Near Brunei Complex</td>
+    </tr>
+    <tr class="tw-group">
+      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">7</th>
+      <td>Fraser Foster</td>
+      <td>Tourisim and Hospitality</td>
+      <td>KSB road</td>
+    </tr>
+  </tbody>
+    </table>
+</main>
+
+{% endblock %}
