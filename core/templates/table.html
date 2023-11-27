@@ -23,62 +23,48 @@
 {% block main_content %}
 
 <main class="m-4 mt-5">
+    {% for day in days %}
+      {% if day.list %}
+        <h1 class="text-center tw-text-lg m-4 fw-bold tw-underline tw-underline-offset-8">Absent {{day.label}}</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="tw-border-s-2">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Residential Address</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider tw-border-t-slate-300">
+              {% for absentee in day.list %}
+              <tr class="tw-group">
+                <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2 row-number">1</th>
+                <td>{{absentee.name}}</td>
+                <td>{{absentee.department}}</td>
+                <td>{{absentee.phone_number}}</td>
+                <td>{{absentee.residential_address}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+      {% else%}
+        <div class="text-center tw-text-lg m-4 tw-text-slate-500">No absentees {{day.label}}</div>
+      {% endif %}
 
-    <!-- <h1 class="tw-text-proj-yellow">Hello world</h1> -->
-    <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th scope="col" class="tw-border-s-2">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Department</th>
-            <th scope="col">Residential Address</th>
-          </tr>
-        </thead>
-  <tbody class="table-group-divider tw-border-t-slate-400">
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">1</th>
-      <td>Samuel Akyen</td>
-      <td>Mathematics</td>
-      <td>123 Accra, Street</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">2</th>
-      <td>Klenam Agbengu</td>
-      <td>Computer Science</td>
-      <td>123 Kumasi Lane</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">3</th>
-      <td>Ernest Mensah-Otabil</td>
-      <td>Nursing</td>
-      <td>455, Main Street</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">4</th>
-      <td>James Lazingi</td>
-      <td>Petrochemical Engineering</td>
-      <td>453, Wanga Estate</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">5</th>
-      <td>Josephine Formena</td>
-      <td>Acturial Science</td>
-      <td>Fred mark avenue</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">6</th>
-      <td>George Cudjoe</td>
-      <td>Electrical Engineering</td>
-      <td>Near Brunei Complex</td>
-    </tr>
-    <tr class="tw-group">
-      <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2">7</th>
-      <td>Fraser Foster</td>
-      <td>Tourisim and Hospitality</td>
-      <td>KSB road</td>
-    </tr>
-  </tbody>
-    </table>
+    {% endfor %}
 </main>
 
+  <script>
+    const tables = document.querySelectorAll('table');
+    const number = (table) => {
+       const ths = table.querySelectorAll('.row-number');
+       ths.forEach((row, index)=>{row.innerHTML = index + 1} )
+    };
+
+    tables.forEach((table)=>{
+       number(table);
+    });
+  
+  </script>
 {% endblock %}

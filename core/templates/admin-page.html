@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block title %}index{% endblock %}
 {% block styles %}
    <style>
@@ -19,21 +20,31 @@
 {% endblock %}
 {% block main_content %}
     <main class="md:tw-p-4 tw-p-2">
-        <form action="">
-            <!-- <input type="text" class="form-control"> -->
+        <h1 class="text-center tw-text-lg m-4 fw-bold tw-underline tw-underline-offset-8">Who's Absent Today ?</h1>
+
+        <form action="" method="POST">
+            {% csrf_token %}
             <div class="split form-row">
                 <div>
                     <label for="" class="tw-my-2 tw-text-slate-700">Name</label>
-                    <input type="text" class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2">
+                    {% render_field form.name class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" %}
                 </div>
                 <div>
-                    <label for="" class="tw-my-2 tw-text-slate-700">Index Number</label>
-                    <input type="number" class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2">
+                    <label for="" class="tw-my-2 tw-text-slate-700">Department</label>
+                    {% render_field form.department class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" %}
                 </div>
             </div>
-            <div class="form-row">
-                <label for="" class="tw-my-2 tw-text-slate-700">Reason</label>
-                <textarea name="" id="" cols="30" rows="10" class="form-control tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2"></textarea>
+            <div class="form-row split">
+                <div>
+                    <label for="" class="tw-my-2 tw-text-slate-700">Phone Number</label>
+                    <!-- <textarea name="" id="" cols="30" rows="10" class="form-control tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2"></textarea> -->
+                    {% render_field form.phone_number class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" %}
+                </div>
+                <div>
+                    <label for="" class="tw-my-2 tw-text-slate-700">Residential Address</label>
+                    <!-- <textarea name="" id="" cols="30" rows="10" class="form-control tw-bg-transparent tw-h-32 tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2"></textarea> -->
+                    {% render_field form.residential_address class="form-control tw-bg-transparent tw-rounded-sm tw-outline tw-outline-1 tw-outline-slate-300 tw-border-0 focus:tw-outline-proj-blue focus:tw-ring-0 focus:tw-outline-2" %}
+                </div>
             </div>
 
             <div class="form-row tw-mt-4 tw-flex tw-justify-center">
