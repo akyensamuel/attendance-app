@@ -26,28 +26,30 @@
     {% for day in days %}
       {% if day.list %}
         <h1 class="text-center tw-text-lg m-4 fw-bold tw-underline tw-underline-offset-8">Absent {{day.label}}</h1>
-        <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th scope="col" class="tw-border-s-2">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Department</th>
-                <th scope="col">Telephone</th>
-                <th scope="col">Residence</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider tw-border-t-slate-300">
-              {% for absentee in day.list %}
-              <tr class="tw-group">
-                <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2 row-number">1</th>
-                <td>{{absentee.name}}</td>
-                <td>{{absentee.department}}</td>
-                <td>{{absentee.phone_number}}</td>
-                <td>{{absentee.residential_address}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th scope="col" class="tw-border-s-2">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Telephone</th>
+                  <th scope="col">Residence</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider tw-border-t-slate-300">
+                {% for absentee in day.list %}
+                <tr class="tw-group">
+                  <th scope="row" class="group-hover:tw-border-s-proj-yellow tw-border-s-2 row-number">1</th>
+                  <td>{{absentee.name}}</td>
+                  <td>{{absentee.department}}</td>
+                  <td>{{absentee.phone_number}}</td>
+                  <td>{{absentee.residential_address}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
       {% else%}
         <div class="text-center tw-text-lg m-4 tw-text-slate-500">No Absentees {{day.label}}</div>
       {% endif %}
