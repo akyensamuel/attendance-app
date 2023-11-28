@@ -14,7 +14,7 @@ def admin(request):
         form = AbsenteeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            form = AbsenteeForm()
     return render(request, 'admin-page.html', {'form':form})
 
 def test(request):
